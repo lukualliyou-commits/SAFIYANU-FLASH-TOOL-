@@ -1,0 +1,46 @@
+<Window x:Class="SafiyanuFlashTool.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="SAFIYANU FLASH TOOL - TECNO/INFINIX/ITEL" Height="550" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="SAFIYANU FLASH TOOL" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+            <TextBlock Text="MTK/SPD Flash for TECNO - INFINIX - ITEL" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="Gray"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Button x:Name="BtnLoadScatter" Content="Load Scatter / Firmware" Width="180" Height="35" Margin="0,0,10,0" Click="BtnLoadScatter_Click"/>
+                <TextBox x:Name="TxtFirmwarePath" IsReadOnly="True" Width="400" Height="35" VerticalContentAlignment="Center"/>
+                <Button x:Name="BtnBrowse" Content="Browse" Width="80" Height="35" Margin="10,0,0,0" Click="BtnLoadScatter_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Functions" FontWeight="Bold" Margin="0,0,0,10"/>
+                <Button x:Name="BtnStart" Content="START FLASH" Height="45" Background="#4CAF50" Foreground="White" FontWeight="Bold" Margin="0,0,0,10" Click="BtnStart_Click"/>
+                <Button x:Name="BtnStop" Content="STOP" Height="35" Margin="0,0,0,10" Click="BtnStop_Click"/>
+                <Button Content="Read Info" Height="35" Margin="0,0,0,10" Click="BtnReadInfo_Click"/>
+                <Button Content="Format + FRP" Height="35" Margin="0,0,0,10" Click="BtnFormat_Click"/>
+                <ComboBox x:Name="CmbChip" Margin="0,10,0,0">
+                    <ComboBoxItem Content="Auto Detect" IsSelected="True"/>
+                    <ComboBoxItem Content="MT6580 - TECNO/ITEL"/>
+                    <ComboBoxItem Content="MT6761 / MT6765 - TECNO Spark/Infinix Hot"/>
+                    <ComboBoxItem Content="MT6768 / G70 / G85"/>
+                    <ComboBoxItem Content="SPD SC9832E / SC9863A - ITEL"/>
+                </ComboBox>
+            </StackPanel>
+            <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1" Margin="15,0,0,0" Padding="10">
+                <ScrollViewer>
+                    <TextBox x:Name="TxtLog" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontFamily="Consolas" Text="Waiting for firmware...&#x0a;Connect phone in BROM mode (Power Off + Vol Down)&#x0a;"/>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+        <StatusBar Grid.Row="2">
+            <TextBlock x:Name="TxtStatus" Text="Ready - SAFIYANU FLASH TOOL v1.0 by LUKU ALLIYOU"/>
+        </StatusBar>
+    </Grid>
+</Window>
