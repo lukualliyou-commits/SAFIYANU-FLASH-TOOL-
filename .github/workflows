@@ -1,0 +1,5 @@
+- name: Upload EXE
+  uses: actions/upload-artifact@v4
+  with:
+    name: EMRS-TOOL-UNIVERSAL-KOWA-Win8
+    path: bin/Release/*.exe
