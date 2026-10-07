@@ -1,0 +1,136 @@
+<Window x:Class="EmrsTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SAFIYANU TMT AMT Ultimate Pro Tool v2.0.8 - CEO SAFIYANU" Height="750" Width="1250"
+        Background="#0F0F0F" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <!-- HEADER - ABOUT SAFIYANU TMT AMT -->
+        <Border Grid.Row="0" Background="#1A1A1A" BorderBrush="#FF8C00" BorderThickness="0,0,0,2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="🛡️ ABOUT SAFIYANU TMT AMT" Foreground="#FF8C00" FontSize="22" FontWeight="Bold" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Background="#000000">
+            <TextBlock Text="CEO - SAFIYANU - Sarkin Flashing" Foreground="#FF8C00" FontSize="24" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <!-- MAIN CONTENT -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="320"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- LEFT - Device List 1,234 -->
+            <Border Grid.Column="0" Background="#1E1E1E" BorderBrush="#333" BorderThickness="0,0,1,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="#2A2A2A" Padding="10">
+                        <TextBlock Text="📱 Device List [1,234]" Foreground="White" FontWeight="Bold"/>
+                    </Border>
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <StackPanel Margin="5">
+                            <TextBlock Text="SAMSUNG [412]" Foreground="#FF8C00" FontWeight="Bold" Margin="0,10"/>
+                            <TextBlock Text=" A05 | A05s | A06 | A07 | A07 ULTRA" Foreground="White" FontSize="11"/>
+                            <TextBlock Text=" A10 | A12 | A23 | A32 | A52 | A73" Foreground="#AAA" FontSize="10"/>
+                            <TextBlock Text=" S22 | S23 | S24 Ultra | Z Fold" Foreground="#AAA" FontSize="10"/>
+
+                            <TextBlock Text="XIAOMI [318]" Foreground="#FF8C00" FontWeight="Bold" Margin="0,10,0,0"/>
+                            <TextBlock Text=" Redmi 11 / Poco M7 | Redmi 12 | 13" Foreground="White" FontSize="11"/>
+                            <TextBlock Text=" Note 10 | Note 11 | Note 12 Pro" Foreground="#AAA" FontSize="10"/>
+
+                            <TextBlock Text="HUAWEI [85]" Foreground="#FF0000" FontWeight="Bold" Margin="0,10,0,0"/>
+                            <TextBlock Text=" ✓ HUAWEI" Foreground="White" FontSize="11"/>
+                            <TextBlock Text="HONOR [65]" Foreground="#00BFFF" FontWeight="Bold" Margin="0,5,0,0"/>
+                            <TextBlock Text=" ✓ HONOR 200 LITE" Foreground="White" FontSize="11"/>
+
+                            <TextBlock Text="OPPO [110]" Foreground="#00FF00" FontWeight="Bold" Margin="0,10,0,0"/>
+                            <TextBlock Text=" A3s | A15 | A54 | Reno 8 | Find X" Foreground="#AAA" FontSize="10"/>
+
+                            <TextBlock Text="TECNO [98]" Foreground="#00BFFF" FontWeight="Bold" Margin="0,5,0,0"/>
+                            <TextBlock Text=" Spark 10 | Camon 20 | Pova 5" Foreground="#AAA" FontSize="10"/>
+
+                            <TextBlock Text="VIVO [78]" Foreground="#FF00FF" FontWeight="Bold" Margin="0,5,0,0"/>
+                            <TextBlock Text="INFINIX [68]" Foreground="White" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <!-- CENTER - Log Console -->
+            <Border Grid.Column="1" Background="#0A0A0A">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="#2A2A2A" Padding="10">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="📋 Log Console" Foreground="White" FontWeight="Bold" Width="200"/>
+                            <Button Content="Clear Log" Background="#333" Foreground="White" Margin="10,0" Padding="10,2"/>
+                            <Button Content="Save Log" Background="#333" Foreground="White" Margin="5,0" Padding="10,2"/>
+                        </StackPanel>
+                    </Border>
+                    <TextBox Grid.Row="1" x:Name="LogBox" Background="#0A0A0A" Foreground="#00FF00" FontFamily="Consolas" FontSize="11"
+                             Text="[14:22:01] SAFIYANU TMT AMT Ultimate Pro Tool v2.0.8 Initialized&#x0a;[14:22:01] Checking ADB/Fastboot drivers... OK&#x0a;[14:22:02] Selected Chipset: QUALCOMM - Mode: EDL&#x0a;[14:22:03] Scanning USB ports... Found 2 device(s)&#x0a;[14:22:04] Device: HUAWEI - Port: COM7 - Status: READY&#x0a;[14:22:05] Device: HONOR 200 LITE - Port: COM9 - Status: READY&#x0a;[14:22:06] Awaiting operation selection...&#x0a;[14:22:07] &gt; Ready for command.&#x0a;[14:22:08] TOTAL DEVICES LOADED: 1,234 [SAMSUNG A05 A06 A07 A07 ULTRA INCLUDED]&#x0a;[READY] Waiting for EDL 9008 Device..."
+                             IsReadOnly="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </Border>
+
+            <!-- RIGHT - Operations -->
+            <Border Grid.Column="2" Background="#1E1E1E" BorderBrush="#333" BorderThickness="1,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="#2A2A2A" Padding="10">
+                        <TextBlock Text="⚙️ Operations [QUALCOMM]" Foreground="White" FontWeight="Bold"/>
+                    </Border>
+                    <UniformGrid Grid.Row="1" Columns="2" Margin="10">
+                        <Button Content="Factory Reset&#x0a;and FRP" Background="#2D2D2D" Foreground="White" Margin="5" Height="70"/>
+                        <Button Content="⬇ Flash" Background="#2D2D2D" Foreground="White" Margin="5" Height="70"/>
+                        <Button Content="🛡️ Reset FRP" Background="#2D2D2D" Foreground="White" Margin="5" Height="70"/>
+                        <Button Content="🔒 Lock&#x0a;Bootloader" Background="#2D2D2D" Foreground="White" Margin="5" Height="70"/>
+                        <Button Content="🔓 Unlock&#x0a;Bootloader" Background="#2D2D2D" Foreground="White" Margin="5" Height="70"/>
+                        <Button Content="💾 RPMB Write" Background="#2D2D2D" Foreground="White" Margin="5" Height="70"/>
+                        <Button Content="📄 RPMB Read" Background="#2D2D2D" Foreground="White" Margin="5" Height="70"/>
+                        <Button Content="📦 Partition&#x0a;Manager" Background="#2D2D2D" Foreground="White" Margin="5" Height="70"/>
+                        <Button Content="❤️ Health Check" Background="#2D2D2D" Foreground="White" Margin="5" Height="70"/>
+                    </UniformGrid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- FOOTER STATUS -->
+        <Border Grid.Row="3" Background="#1A1A1A" BorderBrush="#333" BorderThickness="0,1,0,0">
+            <TextBlock Text="Status: Ready | Port: Auto | Connected Devices: 2 | Runtime: 00:02:17 | License: PRO ACTIVE | Total: 1,234 Devices" Foreground="#AAA" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- BOTTOM - CEO PHOTO -->
+        <Grid Grid.Row="4" Background="#0F0F0F">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Width="70" Height="70" CornerRadius="35" BorderBrush="#FF8C00" BorderThickness="3" Margin="10">
+                <Border.Background>
+                    <ImageBrush ImageSource="logo.png" Stretch="UniformToFill"/>
+                </Border.Background>
+            </Border>
+            <TextBlock Grid.Column="1" Text="&quot;Created by SAFIYANU&quot; - CEO - Sarkin Flashing - 1,234 Devices [A05 A06 A07 A07 ULTRA]" Foreground="#FF8C00" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>
